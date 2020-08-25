@@ -1,0 +1,374 @@
+{
+	"info": {
+		"_postman_id": "b05b858d-3249-4019-8b1e-97f5e5e2db95",
+		"name": "FundacaoCERTI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "FC - CT1 - Limite Positivo Intervalo",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "4e92457a-f05d-402d-92a8-14e23e925de2",
+						"exec": [
+							"pm.test(\"LimitePositoIntervalo\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.extenso).to.eql(\"noventa e nove mil e novecentos e noventa e nove\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://177.71.114.188/99999",
+					"protocol": "http",
+					"host": [
+						"177",
+						"71",
+						"114",
+						"188"
+					],
+					"path": [
+						"99999"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "FC - CT2 - Limite Positivo Fora",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "8a557fee-0f9b-4dfc-bd95-14f45d524f60",
+						"exec": [
+							"pm.test(\"Body is correct\", function () {\r",
+							"    const response = pm.response.text().trim();\r",
+							"    pm.expect(response).to.eql('Invalid range');\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://177.71.114.188/100000",
+					"protocol": "http",
+					"host": [
+						"177",
+						"71",
+						"114",
+						"188"
+					],
+					"path": [
+						"100000"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "FC - CT3 - Limite Negativo Intervalo",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "e6545a48-b66c-41b7-887c-211b3f3c521b",
+						"exec": [
+							"pm.test(\"LimiteNegativoIntervalo\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.extenso).to.eql(\"menos noventa e nove mil e novecentos e noventa e nove\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://177.71.114.188/-99999",
+					"protocol": "http",
+					"host": [
+						"177",
+						"71",
+						"114",
+						"188"
+					],
+					"path": [
+						"-99999"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "FC - CT4 - Limite Negativo Fora",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "e2c46d43-c5d5-46ce-b051-c9319bf05a75",
+						"exec": [
+							"pm.test(\"Body is correct\", function () {\r",
+							"    const response = pm.response.text().trim();\r",
+							"    pm.expect(response).to.eql('Invalid range');\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://177.71.114.188/-100000",
+					"protocol": "http",
+					"host": [
+						"177",
+						"71",
+						"114",
+						"188"
+					],
+					"path": [
+						"-100000"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "FC - CT5 - Dentro Intervalo Positivo",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "4eb3a6d2-9d5a-4be3-8610-204a9d471706",
+						"exec": [
+							"pm.test(\"DentroIntervaloPositivo\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.extenso).to.eql(\"cinquenta e oito\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://177.71.114.188/58",
+					"protocol": "http",
+					"host": [
+						"177",
+						"71",
+						"114",
+						"188"
+					],
+					"path": [
+						"58"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "FC - CT6 - Dentro Intervalo Negativo",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "388cb79f-0851-4608-8acf-016e1a1dbd3b",
+						"exec": [
+							"pm.test(\"DentroIntervaloNegativo\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.extenso).to.eql(\"menos cinquenta e oito\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://177.71.114.188/-58",
+					"protocol": "http",
+					"host": [
+						"177",
+						"71",
+						"114",
+						"188"
+					],
+					"path": [
+						"-58"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "FC - CT7 - Dentro Intervalo Positivo EN",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "71cf6cff-5d97-49c1-891e-fa2fa44bfb8e",
+						"exec": [
+							"pm.test(\"DentroIntervaloPositivoEN\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.full).to.eql(\"thirty one\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://177.71.114.188/en/31",
+					"protocol": "http",
+					"host": [
+						"177",
+						"71",
+						"114",
+						"188"
+					],
+					"path": [
+						"en",
+						"31"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "FC - CT8 - Dentro Intervalo Negativo EN",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "fe7de8ff-3a5b-4027-9224-c4a4f2cad13c",
+						"exec": [
+							"pm.test(\"DentroIntervaloPositivoEN\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.full).to.eql(\"minus thirty one\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://177.71.114.188/en/-31",
+					"protocol": "http",
+					"host": [
+						"177",
+						"71",
+						"114",
+						"188"
+					],
+					"path": [
+						"en",
+						"-31"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "FC - CT9 - Dado Inválido",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "cd8e5931-5464-4e65-8e92-ec1d737aa1dc",
+						"exec": [
+							"pm.test(\"Body is correct\", function () {\r",
+							"    const response = pm.response.text().trim();\r",
+							"    pm.expect(response).to.eql('Invalid data');\r",
+							"});\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://177.71.114.188/h",
+					"protocol": "http",
+					"host": [
+						"177",
+						"71",
+						"114",
+						"188"
+					],
+					"path": [
+						"h"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "FC - CT10 - Error",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "3297562f-4146-4f67-ab70-4c5c7c01b768",
+						"exec": [
+							"pm.test(\"Body is correct\", function () {\r",
+							"    const response = pm.response.text().trim();\r",
+							"    pm.expect(response).to.eql('Error');\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://177.71.114.188/10000000000",
+					"protocol": "http",
+					"host": [
+						"177",
+						"71",
+						"114",
+						"188"
+					],
+					"path": [
+						"10000000000"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
