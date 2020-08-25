@@ -22,12 +22,6 @@
 	- Pre requisitos: ter o Node.js instaldo;
 	- Instruções para execução:
 		a) Realizar o download da collection `FundacaoCERTI.postman_collection.json`;
-		b) Executar o comando: 
-		```shell
-$ npm install -g newman
-```;
-		c) Executar o comando: 
-		```shell
-$ newman run FundacaoCERTI.postman_collection.json
-```;
-		d) Será executado os casos de teste e no fim será apresentado o relatório com os resultados;
+		b) Executar o comando: `$ npm install -g newman`;
+		c) Executar o comando: `$ newman run FundacaoCERTI.postman_collection.json`;
+		d)  Será executado os casos de teste e no fim será apresentado o relatório com os resultados;
